@@ -118,3 +118,62 @@ C'est ces trois commandes que vous utiliserez à chaque fois :
 * ``git add NomDuFicherModifié``
 * ``git commit -m "message de modifications"``
 * ``git push``
+
+
+# Ecrire un bon message de commit 
+
+Ecrire un bonn message de commit est essentiel pour la maintenance et la compréhension d'un projet.
+Cela aide à suivre l'évolution du projet et à comprendre les raisons derrière chaque modification.
+
+Voici une norme généralement acceptée pour rédiger des messages de commit
+
+## Structure d'un message de commit 
+
+Un message de commit se compose généralement de deux parties : 
+
+* Un titre (ou en-tête) : C'est une brève description des modifications.
+Il doit être concis et ne pas dépasser les 50 caractères. Il doiit commencer par une Majuscule.
+
+* un corps : il donne des détails supplémentaires sur les modifications. Il est séparé du titre par une ligne blanche.
+
+```
+Titre court et description
+
+Corps du message : ici, on explique en détail le pourquoi et le comment
+des changements si nécéssaires. Essayez de garder chaque ligne à moins
+de 72 caractères.
+
+```
+
+## Conseils pour un bon message de commit 
+
+
+* Utilisez l'impératif : le titre doit idéalement être écrit à la voie impérative
+( ex : Ajoute, Refactorise...)
+* Titre clair et concis : Doit être court et descriptif
+* Séparez les sujets : Si vous avez plusieurs modifications qui n'ont pas de rapports en elles, envisagez de les séparer en plusieurs commit
+* Expliquez le pourquoi, le Comment : Le code lui-même montre comment une certaine chose a été faite. Ce qui n'est pas toujours clair ,
+c'est pourquoi cette modification a été apportéz.
+* Evitez les messages vagues "correction diverse" ou "Mise à jour" faut que se soit utile.
+* Utilisez des références aux issues/tracker : Si votre commit fait référence à une issue ou à un ticker, ajoutez cette référence.
+* Respectez les conventions de l'équipe, Si votre équipe a des conventions spécifiques pour les messages de commit, suivez-les.
+
+
+### Exemple d'un bon message de commit 
+
+```
+Ajoute une fonctionnalité de recherche
+
+La page d'acceuil avait besoin d'une fonctionnalité de
+recherche pour aider les utilisateurs à trouver des contenues
+spécifiques.
+Cette modifications ajoute un moteur de recherche et utilise
+L'API de recherche pour récupérer les résultats.
+
+Relatif à l'issue #123
+
+```
+
+# En savoir plus sur le langage markdown
+Pour la rédaction de vos fichiers Readme, n'hésitez pas à vous pencher sur la documentation markdown. Voici un lien pour vous aider :
+[Lien pour apprendre le markdown](https://programminghistorian.org/fr/lecons/debuter-avec-markdown)
