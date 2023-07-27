@@ -1,7 +1,8 @@
 import random
 import tkinter as tk
 from PIL import Image, ImageTk
-import pyaudio
+
+
 
 # Création de la fenêtre principale
 fenetre = tk.Tk()
@@ -9,9 +10,11 @@ fenetre.title("Pierre - Papier - Ciseaux")
 fenetre.geometry("1024x768")
 
 # Fonction qui choisi au hasard pour l'ordinateur
+
 def computer_choice():
     choices = ["Pierre", "Papier", "Ciseaux"]
     return random.choice(choices)
+
 
 
 
@@ -97,7 +100,26 @@ def get_image(choice):
         return paper_img
     else:
         return scissors_img
+
+
+# Fonction a appeler lors de l'appui sur une touche
+
+def on_key_press(e):
+    if nombre_de_coup.get() < 10:
+        if e.char.lower()== "p":
+            play("papier")
+        
+        if e.char.lower()== "r":
+            play("pierre")
+                
+        if e.char.lower()== "s":
+            play("ciseaux")
+                
     
+    
+# Associer la fonction on_key_press à l'evenement <key>
+fenetre.bind("<Key>", on_key_press)
+   
 # Définition des variables
 result_var = tk.StringVar()
 player_score_var = tk.IntVar()
