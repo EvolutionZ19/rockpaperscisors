@@ -177,3 +177,85 @@ Relatif à l'issue #123
 # En savoir plus sur le langage markdown
 Pour la rédaction de vos fichiers Readme, n'hésitez pas à vous pencher sur la documentation markdown. Voici un lien pour vous aider :
 [Lien pour apprendre le markdown](https://programminghistorian.org/fr/lecons/debuter-avec-markdown)
+
+![Texte associé à l'image](pierre.gif)
+
+# Pull request(PR)
+
+C'est une fonctionnalité clé des systèmes de gestion de versions basées sur git comme Github, GitLab, Bitbucket...
+Elle représente un demande de fusion d'une modification d'une branche vers une autre, généralment de la branche d'une fonctionnalité vers la branche principale d'un projet.
+
+## Concept de la Pull Request(PR)
+Collaboration et revue de code: La PR n'est pas seulement un mécanisme de fusion de code.
+C'est aussi un outil de collaboration. Lorsqu'un dévéloppeur soumet une PR, d'autres membres de l'équipe peuvent la consulter, 
+laisser des commentaires, suggérer des modifications et même proposer des commits pour améliorer la PR avant qu'elle ne soit fusionnée.
+
+**Point de contrôle: Avant la fusion, La PR fournit un point de contrôle pour s'asurer que le code respecte les normes de qualités,
+passe tous les tests et n'indroduit pas de régressions.
+
+**Intégration avec CI/CD :** Les PR sont souvent intégrées avec des outils d'Intrégration continue et de livraison Continue (CI/CD).
+Lorsq'une PR est soumise, des tests automatisés peuvent être déclenchés, et le résultat de ces tests est souvent signalé directement 
+dans l'interface de la PR.
+
+## Faire une Pull Request (PR)
+## Fork du repository
+Avant de pouvoir soumettre une Pull Request, vous devez avoir un copie du repository sur votre compte.
+Si ce n'est pas deja fait : 
+
+1. Rendez-vous sur la page Github du projet auquel vous voulez contribuer.
+2. Cliquez sur le bouton "Fork" en haut à droite de la page. Cela créera une copie du projet sur votre compte Github.
+
+## Clonez votre Fork
+
+Clonez votre fork sur votre machine:
+```
+git clone URL_DU_REPO_A_CLONER
+git clone https://github.com/EvolutionZ19/rockpaperscisors.git
+```
+
+## Créez une nouvelle branche
+Il est conseillé de créer une nouvelle branche pour chaque nouvelles fonctionnalités et corrections,
+cela vous permet de garder votre travaile organisé et séparé.
+
+Pour créer une nouvelle branche vous devez utiliser la commande ``git checkout -b``
+```
+git checkout -b nom_de_la_branche
+git checkout -b fonctionnalités_timer
+
+```
+
+## Aportez les modifications
+
+mofifiés les fichiers nécessaire et ajoutez les à l'index :
+
+```
+git add nom_du_fichier
+```
+ou pour ajouter tous les fichiers modifiés : 
+```
+git add *
+```
+
+Ensuite, faites un commit de vos modifications:
+
+```
+git commit -m " message des modifications"
+```
+
+## Poussez la branche vers le fork
+
+```
+git push origin nom_de_la_branche
+```
+
+## Creez la Pull Request : 
+
+1. Allez sur la page Github de votre Fork
+2. Cliquez sur le bouton "New pull request"
+3. Sélectionnez votre nouvelle branche dans le menu déroulant "compare"
+4. Assurez-vous que la branche de base (**main**) est celle du projet original et non celle de votre fork
+5. Vérifier les modifications et cliquez sur "Create Pull Request"
+6. Donnez un titre à votre pull request et décrivez les modifications ou les raisons de votre pull request
+7. Cliquez sur "Create Pull Request" pour soumettre votre pull request.
+
+

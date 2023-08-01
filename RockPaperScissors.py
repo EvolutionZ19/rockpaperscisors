@@ -1,13 +1,30 @@
 import random
 import tkinter as tk
 from PIL import Image, ImageTk
-
+import pygame
 
 
 # Création de la fenêtre principale
 fenetre = tk.Tk()
 fenetre.title("Pierre - Papier - Ciseaux")
 fenetre.geometry("1024x768")
+
+# Charger la musique de fond
+pygame.mixer.init()
+pygame.mixer.music.load("Rush_E.mp3")  
+
+# Baisser le volume
+pygame.mixer.music.set_volume(0.1)
+
+# Musique de fond en continue 
+pygame.mixer.music.play(-1)
+
+# Ajouter un bruitages pour les boutons
+pierre_sound = pygame.mixer.Sound("SonPierre.wav")
+papier_sound = pygame.mixer.Sound("SonVent.wav")
+ciseaux_sound = pygame.mixer.Sound("SonCiseaux.wav")
+
+
 
 # Fonction qui choisi au hasard pour l'ordinateur
 
@@ -20,6 +37,17 @@ def computer_choice():
 
 # Fonction qui permet de lancer le jeu
 def play(user_choice):
+    
+    #test pour les btuitage des boutons quand c'est appuyé
+    if user_choice == "Pierre":
+        pierre_sound.play()
+    elif user_choice == "Papier":
+        papier_sound.play()
+    elif user_choice == "Ciseaux":
+        ciseaux_sound.play()
+        
+        
+        
     nombre_de_coup.set(nombre_de_coup.get() + 1)
     
     computer = computer_choice() #Fait appel à la fonction qui choisi aléatoirement pour le PC
@@ -119,6 +147,12 @@ def on_key_press(e):
     
 # Associer la fonction on_key_press à l'evenement <key>
 fenetre.bind("<Key>", on_key_press)
+
+
+
+
+
+
    
 # Définition des variables
 result_var = tk.StringVar()
@@ -183,3 +217,7 @@ history_listbox.pack()
 
 
 fenetre.mainloop()
+
+
+
+
